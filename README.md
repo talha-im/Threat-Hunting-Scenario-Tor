@@ -127,6 +127,18 @@ DeviceFileEvents
 
 ---
 
+## MITRE ATT&CK Technique Mapping
+
+| # | Finding                                         | MITRE ATT&CK Technique                        | Tactic              |
+| - | ----------------------------------------------- | --------------------------------------------- | ------------------- |
+| 1 | Tor Browser installer downloaded                | **T1105 – Ingress Tool Transfer**             | Command and Control |
+| 2 | Tor Browser silently installed (`/S` switch)    | **T1204.002 – User Execution: Malicious File** | Execution           |
+| 3 | Tor Browser executed (`tor.exe`, `firefox.exe`) | **T1204 – User Execution**                    | Execution           |
+| 4 | Outbound connections to Tor relay ports         | **T1090.003 – Proxy: Multi-hop Proxy**        | Command and Control |
+| 5 | File created after Tor usage (`drug list.txt`)  | **T1005 – Data from Local System**            | Collection          |
+
+---
+
 ## Summary
 
 User `talha` on host `talha-threat-hu` downloaded, silently installed, and actively used the Tor Browser, with multiple `tor.exe` and `firefox.exe` processes observed. The browser established outbound connections to Tor-related ports (e.g., 9001), and a text file (`drug list.txt`) was created shortly afterward, indicating immediate follow-on user activity.
